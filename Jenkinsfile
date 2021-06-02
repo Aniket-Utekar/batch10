@@ -57,7 +57,7 @@ try{
             echo "Installing desired software.."
             echo "Bring docker service up and running"
             echo "Deploying addressbook application"
-            ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible 2.9.22', inventory: '/etc/ansible/hosts', playbook: 'deploy-playbook.yml'
+            ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible 2.9.22', inventory: '/etc/ansible/hosts', playbook: 'deploy-playbook.yml'
         }
         
         stage('Clean up'){
