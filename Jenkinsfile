@@ -74,7 +74,7 @@ catch(Exception err){
 finally {
     (currentBuild.result!= "ABORTED") && node("master") {
         echo "finally gets executed and end an email notification for every build"
-        //emailext body: 'Your build has been successful or unsuccessful', subject: 'Build Result', to: 'shubhamkushwah123@gmail.com'
+        emailext body: 'Your build has been successful or unsuccessful', subject: 'Build Result', to: 'aniket.utekar017@gmail.com'
     }
     
 }
