@@ -22,7 +22,7 @@
       state: started
       enabled: true
   - name: deploy addressbook application
-    command: sudo docker run -it -d -p 8085:8080 --name springboot aniketute/springboot:1.0
+    command: sudo docker run -it -d -p 8085:8888 --name springboot aniketute/springboot:1.0
   handlers:
   - name: run update
     apt:
