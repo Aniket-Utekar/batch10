@@ -12,10 +12,6 @@
     apt:
       pkg: tomcat9
       state: present
-  - name: uninstall git
-    apt:
-      pkg: git
-      state: absent
   - name: install docker
     apt:
       pkg: docker.io
