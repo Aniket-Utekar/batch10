@@ -69,7 +69,7 @@ try{
 catch(Exception err){
     echo "Exception occured..."
     currentBuild.result="FAILURE"
-    //send an failure email notification to the user.
+    emailext body: 'Your build has been unsuccessful', subject: 'Build Result', to: 'aniket.utekar017@gmail.com'
 }
 finally {
     (currentBuild.result!= "ABORTED") && node("master") {
