@@ -26,7 +26,7 @@ try{
         
         stage('Sonar Scan'){
             echo "Scanning application for vulnerabilities..."
-            sh "${mavenCMD} sonar:sonar -Dsonar.host.url=http://34.136.218.140:8080"
+            sh "${mavenCMD} sonar:sonar -Dsonar.host.url=http://34.136.218.140:80"
         }
         
         stage('Integration test'){
