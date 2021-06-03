@@ -27,7 +27,7 @@ try{
         stage('Sonar Scan'){
             echo "Scanning application for vulnerabilities..."
             withSonarQubeEnv(credentialsId: 'bootcamp') {
-            sh "${mavenCMD} sonar:sonar -Dsonar.host.url=http://34.72.217.230:9000/"
+            sh "${mavenCMD} sonar:sonar -Dsonar.host.url=http://34.72.217.230:9000"
         }
         }
 
