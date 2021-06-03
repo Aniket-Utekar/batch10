@@ -26,9 +26,11 @@ try{
         
         stage('Sonar Scan'){
             echo "Scanning application for vulnerabilities..."
-            sh "${mavenCMD} sonar:sonar -Dsonar.host.url=http://34.136.218.140:80"
+            withSonarQubeEnv(credentialsId: 'sonar') {
+            sh "${mavenCMD} sonar:sonar -Dsonar.host.url=http://34.72.217.230:9000/"
         }
-        
+        }
+
         stage('Integration test'){
             echo "Executing Regression Test Suits..."
             // command to execute selenium test suits
