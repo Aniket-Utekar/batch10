@@ -64,10 +64,11 @@ try{
         }
         
         stage('Clean up'){
-            try{
             echo "Cleaning up the workspace..."
             cleanWs()
             }
+    }
+}
             catch(Exception err){
                 echo "Exception occured..."
                 currentBuild.result="FAILURE"
@@ -80,6 +81,5 @@ try{
             }
     
    }
- }
-}
+
 
