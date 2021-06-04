@@ -75,7 +75,7 @@ catch(Exception err){
     emailext body: 'Your build has been unsuccessful', subject: 'Build Result', to: 'aniket.utekar017@gmail.com'
 }
 finally {
-    (currentBuild.result!= "ABORTED") && node("master") {
+    (currentBuild.result!= "ABORTED") && (currentBuild.result!= "FAILURE")  && node("master") {
         echo "finally gets executed and end an email notification for every build"
         emailext body: 'Your build has been successful', subject: 'Build Result - JOB ${BUILD_NUMBER}', to: 'aniket.utekar017@gmail.com'
     }
