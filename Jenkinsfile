@@ -33,12 +33,13 @@ try{
 
         stage('Integration test'){
             echo "Executing Regression Test Suits..."
-            // command to execute selenium test suits
+            echo "Generating Test Report"
+            sh "${mavenCMD} surefire-report:report-only"
         }
         
         stage('publish report'){
             echo " Publishing HTML report.."
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
         }
         
         stage('Build Docker Image'){
